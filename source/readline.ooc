@@ -1,6 +1,9 @@
 include stdio, readline/readline, readline/history
 
-readline: extern func (prompt: String) -> String
-readline: func ~noPrompt -> String { readline(null) }
+Readline: class {
 
-add_history: extern func (line: String)
+	readLine: extern(readline) static func (prompt: String) -> String
+	readLine: static func ~noPrompt -> String { readLine(null) }
+	addHistory: extern(add_history) static func (line: String)
+
+}
